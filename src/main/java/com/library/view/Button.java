@@ -2,13 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class UnoButton extends JButton {
+public class Button extends JButton {
     private Color backgroundColor;
     private Color hoverColor;
     private Color pressedColor;
     private int cornerRadius;
     
-    public UnoButton(String text, Color bgColor) {
+    public Button(String text, Color bgColor) {
         super(text);
         this.backgroundColor = bgColor;
         this.hoverColor = bgColor.brighter();
@@ -45,23 +45,23 @@ public class UnoButton extends JButton {
     }
     
     // Factory methods for common Uno button colors
-    public static UnoButton createRedButton(String text) {
-        return new UnoButton(text, new Color(211, 47, 47));
+    public static Button createRedButton(String text) {
+        return new Button(text, new Color(211, 47, 47));
     }
     
-    public static UnoButton createBlueButton(String text) {
-        return new UnoButton(text, new Color(41, 98, 255));
+    public static Button createBlueButton(String text) {
+        return new Button(text, new Color(41, 98, 255));
     }
     
-    public static UnoButton createGreenButton(String text) {
-        return new UnoButton(text, new Color(56, 142, 60));
+    public static Button createGreenButton(String text) {
+        return new Button(text, new Color(56, 142, 60));
     }
     
-    public static UnoButton createYellowButton(String text) {
-        return new UnoButton(text, new Color(255, 238, 88));
+    public static Button createYellowButton(String text) {
+        return new Button(text, new Color(255, 238, 88));
     }
     
-    public static UnoButton createWildButton(String text) {
-        return new UnoButton(text, new Color(106, 27, 154)); // Purple for wild cards
+    public static Button createWildButton(String text) {
+        return new Button(text, new Color(106, 27, 154)); // Purple for wild cards
     }
 }

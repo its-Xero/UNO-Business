@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class UnoPanel extends JPanel {
+public class Panel extends JPanel {
     private Color backgroundColor;
     private int cornerRadius;
     private boolean rounded;
     
-    public UnoPanel(Color bgColor, boolean rounded) {
+    public Panel(Color bgColor, boolean rounded) {
         this.backgroundColor = bgColor;
         this.rounded = rounded;
         this.cornerRadius = 20;
@@ -32,15 +32,15 @@ public class UnoPanel extends JPanel {
     }
     
     // Factory methods for common panel types
-    public static UnoPanel createPlayerPanel() {
-        return new UnoPanel(new Color(255, 255, 255, 200), true);
+    public static Panel createPlayerPanel() {
+        return new Panel(new Color(255, 255, 255, 200), true);
     }
     
-    public static UnoPanel createGameBoardPanel() {
-        return new UnoPanel(new Color(245, 245, 245, 220), true);
+    public static Panel createGameBoardPanel() {
+        return new Panel(new Color(245, 245, 245, 220), true);
     }
     
-    public static UnoPanel createCardPanel() {
-        return new UnoPanel(new Color(255, 255, 255), true);
+    public static Panel createCardPanel() {
+        return new Panel(new Color(255, 255, 255), true);
     }
 }

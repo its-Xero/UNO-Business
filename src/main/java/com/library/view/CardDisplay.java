@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class UnoCardComponent extends JComponent {
+public class CardDisplay extends JComponent {
     private Color cardColor;
     private String cardValue;
     private boolean selected;
     
-    public UnoCardComponent(Color color, String value) {
+    public CardDisplay(Color color, String value) {
         this.cardColor = color;
         this.cardValue = value;
         this.selected = false;

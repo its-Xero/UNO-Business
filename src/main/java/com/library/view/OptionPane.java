@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class UnoOptionPane {
+public class OptionPane {
     public static void showUnoMessageDialog(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, 
             "<html><div style='text-align: center;'><font face='Comic Sans MS' size='4' color='#0D47A1'>" + 

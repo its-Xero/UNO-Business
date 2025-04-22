@@ -2,10 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class UnoTextField extends JTextField {
+public class TextField extends JTextField {
     private int cornerRadius;
     
-    public UnoTextField(int columns) {
+    public TextField(int columns) {
         super(columns);
         this.cornerRadius = 15;
         setOpaque(false);

@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class UnoFrame extends JFrame {
-    public UnoFrame(String title) {
+public class Frame extends JFrame {
+    public Frame(String title) {
         super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 700);
@@ -18,7 +18,7 @@ public class UnoFrame extends JFrame {
     
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            UnoFrame frame = new UnoFrame("Uno Game");
+            Frame frame = new Frame("Uno Game");
             frame.setVisible(true);
         });
     }
