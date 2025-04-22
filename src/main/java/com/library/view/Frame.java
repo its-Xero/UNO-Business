@@ -1,3 +1,5 @@
+package com.library.view;
+
 import javax.swing.*;
 import java.awt.*;
 
