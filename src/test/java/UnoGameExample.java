@@ -15,7 +15,7 @@ public class UnoGameExample {
             Frame frame = new Frame("Uno Game");
             
             // Create main panel with border layout
-            Panel mainPanel = new Panel(new Color(13, 71, 161), false);
+            Panel mainPanel = new Panel(new Color(24, 82, 181), false);
             mainPanel.setLayout(new BorderLayout(10, 10));
             
             // Add title
@@ -39,24 +39,16 @@ public class UnoGameExample {
             
             // Add buttons
             Button drawButton = Button.createWildButton("Draw Card");
-            Button unoButton = Button.createRedButton("Say UNO!");
             Button passButton = Button.createBlueButton("Pass Turn");
             
             controlPanel.add(drawButton);
-            controlPanel.add(unoButton);
             controlPanel.add(passButton);
             
             mainPanel.add(controlPanel, BorderLayout.SOUTH);
             
             // Add action listeners
             drawButton.addActionListener(_ -> OptionPane.showUnoMessageDialog(frame, "You drew a card!"));
-            
-            unoButton.addActionListener(_ -> {
-                int response = OptionPane.showUnoConfirmDialog(frame, "Are you sure you want to say UNO?");
-                if (response == JOptionPane.YES_OPTION) {
-                    OptionPane.showUnoMessageDialog(frame, "UNO!");
-                }
-            });
+
             
             // Set content and show frame
             frame.setContentPane(mainPanel);
