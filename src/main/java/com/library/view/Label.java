@@ -15,7 +15,11 @@ public class Label extends JLabel {
         setForeground(color);
         setFont(new Font("Comic Sans MS", Font.BOLD, fontSize));
     }
-    
+
+    public Label(String text, int horizontalAlignment) {
+        super(text, horizontalAlignment);
+    }
+
     // Factory methods for common label types
     public static Label createTitleLabel(String text) {
         Label label = new Label(text, Color.YELLOW, 28);

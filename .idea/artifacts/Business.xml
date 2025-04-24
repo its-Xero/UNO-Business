@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Business">
+    <output-path>$PROJECT_DIR$/artifacts/Business</output-path>
+    <root id="archive" name="Business.jar">
+      <element id="module-output" name="UNO-Business" />
+    </root>
+  </artifact>
+</component>

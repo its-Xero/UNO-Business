@@ -8,7 +8,16 @@ public class Panel extends JPanel {
     private Color backgroundColor;
     private int cornerRadius;
     private boolean rounded;
-    
+
+    public Panel() {
+        this.cornerRadius = 20;
+        setOpaque(false);
+    }
+
+    public Panel(LayoutManager layout) {
+        super(layout);
+    }
+
     public Panel(Color bgColor, boolean rounded) {
         this.backgroundColor = bgColor;
         this.rounded = rounded;

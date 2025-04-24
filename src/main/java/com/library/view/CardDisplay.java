@@ -3,53 +3,38 @@ package com.library.view;
 import javax.swing.*;
 import java.awt.*;
 
-public class CardDisplay extends JComponent {
-    private Color cardColor;
-    private String cardValue;
-    private boolean selected;
-    
+public class CardDisplay extends JPanel {
+    private final String value;
+    private final Color color;
+
     public CardDisplay(Color color, String value) {
-        this.cardColor = color;
-        this.cardValue = value;
-        this.selected = false;
-        setPreferredSize(new Dimension(80, 120));
+        this.color = color;
+        this.value = value;
+        setPreferredSize(new Dimension(70, 110));
+        setBackground(color);
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        setLayout(new BorderLayout());
+
+        JLabel valueLabel = new JLabel(value, JLabel.CENTER);
+        valueLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        valueLabel.setForeground(Color.WHITE);
+        add(valueLabel, BorderLayout.CENTER);
     }
-    
-    public void setSelected(boolean selected) {
-        this.selected = selected;
-        repaint();
-    }
-    
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        
-        // Draw card background
-        if (selected) {
-            g2.setColor(cardColor.brighter());
-        } else {
-            g2.setColor(cardColor);
-        }
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        
-        // Draw card border
-        g2.setColor(Color.BLACK);
-        g2.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 15, 15);
-        
-        // Draw card value
-        g2.setColor(Color.WHITE);
-        g2.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-        
-        FontMetrics fm = g2.getFontMetrics();
-        int x = (getWidth() - fm.stringWidth(cardValue)) / 2;
-        int y = (getHeight() - fm.getHeight()) / 2 + fm.getAscent();
-        
-        g2.drawString(cardValue, x, y);
-        
-        // Draw small value in corner
-        g2.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
-        g2.drawString(cardValue, 5, 15);
+
+        // Add card decoration
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        // Draw rounded corners
+        g2d.setColor(color);
+        g2d.fillRoundRect(3, 3, getWidth() - 6, getHeight() - 6, 15, 15);
+
+        // Draw oval in middle of card
+        g2d.setColor(new Color(255, 255, 255, 60));
+        g2d.fillOval(getWidth()/4, getHeight()/3, getWidth()/2, getHeight()/3);
     }
 }

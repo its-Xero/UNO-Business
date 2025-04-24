@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import com.library.view.Frame;
+import com.library.view.SFrame;
 import com.library.view.Panel;
 import com.library.view.Label;
 import com.library.view.Button;
@@ -12,7 +12,7 @@ public class UnoGameExample {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             // Create the main frame
-            Frame frame = new Frame("Uno Game");
+            SFrame frame = new SFrame("Uno Game");
             
             // Create main panel with border layout
             Panel mainPanel = new Panel(new Color(24, 82, 181), false);
