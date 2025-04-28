@@ -4,27 +4,31 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class Panel extends JPanel {
+public class SPanel extends JPanel {
     private Color backgroundColor;
     private int cornerRadius;
     private boolean rounded;
 
-    public Panel() {
+    public SPanel() {
         this.cornerRadius = 20;
         setOpaque(false);
     }
 
-    public Panel(LayoutManager layout) {
+    public SPanel(LayoutManager layout) {
         super(layout);
     }
 
-    public Panel(Color bgColor, boolean rounded) {
+    public SPanel(Color bgColor, boolean rounded) {
         this.backgroundColor = bgColor;
         this.rounded = rounded;
         this.cornerRadius = 20;
         setOpaque(false);
     }
-    
+
+    public void setBackgroundColor(Color backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -43,15 +47,15 @@ public class Panel extends JPanel {
     }
     
     // Factory methods for common panel types
-    public static Panel createPlayerPanel() {
-        return new Panel(new Color(255, 255, 255, 200), true);
+    public static SPanel createPlayerPanel() {
+        return new SPanel(new Color(255, 255, 255, 200), true);
     }
     
-    public static Panel createGameBoardPanel() {
-        return new Panel(new Color(245, 245, 245, 220), true);
+    public static SPanel createGameBoardPanel() {
+        return new SPanel(new Color(245, 245, 245, 220), true);
     }
     
-    public static Panel createCardPanel() {
-        return new Panel(new Color(255, 255, 255), true);
+    public static SPanel createCardPanel() {
+        return new SPanel(new Color(255, 255, 255), true);
     }
 }
