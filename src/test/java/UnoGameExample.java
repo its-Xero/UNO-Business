@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 import com.library.view.SFrame;
-import com.library.view.Panel;
-import com.library.view.Label;
-import com.library.view.Button;
+import com.library.view.SPanel;
+import com.library.view.RLabel;
+import com.library.view.UButton;
 import com.library.view.CardDisplay;
-import com.library.view.OptionPane;
+import com.library.view.ROptionPane;
 
 
 public class UnoGameExample {
@@ -15,14 +15,14 @@ public class UnoGameExample {
             SFrame frame = new SFrame("Uno Game");
             
             // Create main panel with border layout
-            Panel mainPanel = new Panel(new Color(24, 82, 181), false);
+            SPanel mainPanel = new SPanel(new Color(24, 82, 181), false);
             mainPanel.setLayout(new BorderLayout(10, 10));
             
             // Add title
-            mainPanel.add(Label.createTitleLabel("UNO GAME"), BorderLayout.NORTH);
+            mainPanel.add(RLabel.createTitleLabel("UNO GAME"), BorderLayout.NORTH);
             
             // Create game board panel
-            Panel boardPanel = Panel.createGameBoardPanel();
+            SPanel boardPanel = SPanel.createGameBoardPanel();
             boardPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
             
             // Add some cards to the board
@@ -34,12 +34,12 @@ public class UnoGameExample {
             mainPanel.add(boardPanel, BorderLayout.CENTER);
             
             // Create control panel
-            Panel controlPanel = Panel.createPlayerPanel();
+            SPanel controlPanel = SPanel.createPlayerPanel();
             controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
             
             // Add buttons
-            Button drawButton = Button.createWildButton("Draw Card");
-            Button passButton = Button.createBlueButton("Pass Turn");
+            UButton drawButton = UButton.createWildButton("Draw Card");
+            UButton passButton = UButton.createBlueButton("Pass Turn");
             
             controlPanel.add(drawButton);
             controlPanel.add(passButton);
@@ -47,7 +47,7 @@ public class UnoGameExample {
             mainPanel.add(controlPanel, BorderLayout.SOUTH);
             
             // Add action listeners
-            drawButton.addActionListener(_ -> OptionPane.showUnoMessageDialog(frame, "You drew a card!"));
+            drawButton.addActionListener(_ -> ROptionPane.showUnoMessageDialog(frame, "You drew a card!"));
 
             
             // Set content and show frame

@@ -3,36 +3,36 @@ package com.library.view;
 import javax.swing.*;
 import java.awt.*;
 
-public class Label extends JLabel {
-    public Label(String text) {
+public class RLabel extends JLabel {
+    public RLabel(String text) {
         super(text);
         setForeground(Color.WHITE);
         setFont(new Font("Comic Sans MS", Font.BOLD, 18));
     }
     
-    public Label(String text, Color color, int fontSize) {
+    public RLabel(String text, Color color, int fontSize) {
         super(text);
         setForeground(color);
         setFont(new Font("Comic Sans MS", Font.BOLD, fontSize));
     }
 
-    public Label(String text, int horizontalAlignment) {
+    public RLabel(String text, int horizontalAlignment) {
         super(text, horizontalAlignment);
     }
 
     // Factory methods for common label types
-    public static Label createTitleLabel(String text) {
-        Label label = new Label(text, Color.YELLOW, 28);
+    public static RLabel createTitleLabel(String text) {
+        RLabel label = new RLabel(text, Color.YELLOW, 28);
         label.setFont(new Font("Comic Sans MS", Font.BOLD, 36));
         return label;
     }
     
-    public static Label createPlayerLabel(String text) {
-        return new Label(text, Color.BLACK, 16);
+    public static RLabel createPlayerLabel(String text) {
+        return new RLabel(text, Color.BLACK, 16);
     }
     
-    public static Label createScoreLabel(String text) {
-        Label label = new Label(text, Color.WHITE, 20);
+    public static RLabel createScoreLabel(String text) {
+        RLabel label = new RLabel(text, Color.WHITE, 20);
         label.setFont(label.getFont().deriveFont(Font.BOLD));
         return label;
     }

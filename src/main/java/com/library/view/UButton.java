@@ -4,13 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
-public class Button extends JButton {
-    private Color backgroundColor;
-    private Color hoverColor;
-    private Color pressedColor;
-    private int cornerRadius;
-    
-    public Button(String text, Color bgColor, int cornerRadius) {
+public class UButton extends JButton {
+    private final Color backgroundColor;
+    private final Color hoverColor;
+    private final Color pressedColor;
+    private final int cornerRadius;
+
+
+    public UButton(String text, Color bgColor, int cornerRadius) {
         super(text);
         this.backgroundColor = bgColor;
         this.hoverColor = bgColor.brighter();
@@ -47,23 +48,23 @@ public class Button extends JButton {
     }
     
     // Factory methods for common Uno button colors
-    public static Button createRedButton(String text) {
-        return new Button(text, new Color(211, 47, 47), 25);
+    public static UButton createRedButton(String text) {
+        return new UButton(text, new Color(211, 47, 47), 25);
     }
     
-    public static Button createBlueButton(String text) {
-        return new Button(text, new Color(41, 98, 255), 25);
+    public static UButton createBlueButton(String text) {
+        return new UButton(text, new Color(41, 98, 255), 25);
     }
     
-    public static Button createGreenButton(String text) {
-        return new Button(text, new Color(56, 142, 60), 25);
+    public static UButton createGreenButton(String text) {
+        return new UButton(text, new Color(56, 142, 60), 25);
     }
     
-    public static Button createYellowButton(String text) {
-        return new Button(text, new Color(255, 238, 88), 25);
+    public static UButton createYellowButton(String text) {
+        return new UButton(text, new Color(255, 238, 88), 25);
     }
     
-    public static Button createWildButton(String text) {
-        return new Button(text, new Color(106, 27, 154), 25);
+    public static UButton createWildButton(String text) {
+        return new UButton(text, new Color(106, 27, 154), 25);
     }
 }
