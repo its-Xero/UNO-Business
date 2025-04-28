@@ -46,8 +46,7 @@ public class UButton extends JButton {
         
         super.paintComponent(g);
     }
-    
-    // Factory methods for common Uno button colors
+
     public static UButton createRedButton(String text) {
         return new UButton(text, new Color(211, 47, 47), 25);
     }
