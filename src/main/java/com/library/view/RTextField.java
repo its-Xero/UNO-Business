@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
 public class RTextField extends JTextField {
-    private int cornerRadius;
+    private final int cornerRadius;
     
     public RTextField(int columns) {
         super(columns);
